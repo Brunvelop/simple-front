@@ -1,4 +1,7 @@
 import React from "react";
+import { Box, Button, Flex, Image, Link, Spacer, ChakraProvider} from '@chakra-ui/react';
+import Twitter from "./assets/social-media-icons/twitter_32x32.png"
+import Opensea from "./assets/social-media-icons/opensea_32x32.png"
 
 const NavBar = ({ accounts, setAccounts }) => {
     const isConnected = Boolean(accounts[0]);
@@ -13,20 +16,35 @@ const NavBar = ({ accounts, setAccounts }) => {
     }
 
     return (
-        <div>
-            <div>Twitter</div>
-            <div>Opensea</div>
-
-            <div>About</div>
-            <div>Mint</div>
-            <div>Team</div>
-
-            {isConnected ? (
-                <p>Connected</p>
-            ) : (
-                <button onClick={connectAccount}>Connect</button>
-            )}
-        </div>
+        <ChakraProvider>
+            <Flex justify="space-between" align="center" padding="30px">
+                <Flex justify="space-around" width="40%" padding="0 75px">
+                    <Link href="https://twitter.com">
+                        <Image src={Twitter} boxSize="42px" margin="0 15px"/>
+                    </Link>
+                    <Link href="https://twitter.com">
+                        <Image src={Opensea} boxSize="42px" margin="0 15px"/>
+                    </Link>
+                </Flex>
+                {isConnected ? (
+                    <Box margin="0 15px">Connected</Box>
+                ) : (
+                    <Button
+                        backgroundColor="#D6517D"
+                        borderRadius="5px"
+                        boxShadow="0px 2px 2px 1px #0F0F0F"
+                        color="white"
+                        cursor="pointer"
+                        fontFamily="inherit"
+                        padding="15px"
+                        margin="0 15px"
+                        onClick={connectAccount}
+                    >
+                        Connect
+                    </Button>
+                )}
+            </Flex>
+        </ChakraProvider>
     )
 }
 

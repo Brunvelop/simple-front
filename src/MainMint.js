@@ -1,9 +1,9 @@
 import { useState } from "react";
-//import { ethers, BigNumber } from "ethers";
-import nft from './NFT.json'
-import { getJsonWalletAddress } from "ethers/lib/utils";
-
 import { ethers } from "ethers";
+import { Box, Button, Flex, Image, Text, ChakraProvider} from '@chakra-ui/react';
+
+import nft from './NFT.json'
+import gif from "./assets/giphy.gif"
 
 const nftAddress = '0xF814a0B1Af54A97c28c8CF559E24b10Fc82801eD';
 
@@ -40,23 +40,50 @@ const MainMint = ({ accounts }) => {
     };
 
     return (
-        <div>
-            <h1> NFT collection</h1>
-            <p>Texto texto texto</p>
-            { isConnected ? (
-                <div>
-                    <button onClick={handleDecrement}>-</button>
-                    <button onClick={handleIncrement}>+</button>
-                    <input type='number' value={mintAmount} />
+        <ChakraProvider>
+            <Flex justify="center" align="center" height="100vh" paddingBottom="150px">
+                <Box width="520px">
                     <div>
-                        <button onClick={handleMint}>Free Mint</button>
+                        <Text fontSize="48px" textShadow="0 5px #000000">PIXCHARS</Text>
+                        <Text
+                            fontSize="30px"
+                            letterSpacing="-5.5%"
+                            fontFamily="VT323"
+                            textShadow="0 2px 2px #000000"
+                        >
+                            A Free-mint collection of 8 bit music and characters (CC0 free to use)
+                        </Text>
+                        <Box align="center" marginTop="20px" marginBottom="20px">
+                            <Image src={gif} alt='NFT Collection samples' />
+                        </Box>
                     </div>
-                </div>
-                
-            ): (
-                <p>You are not connected</p>
-            )}
-        </div>
+                    { isConnected ? (
+                        <div>
+                            {/* <Flex align="center" justify="center">
+                                <button onClick={handleDecrement}>-</button>
+                                <button onClick={handleIncrement}>+</button>
+                                <input type='number' value={mintAmount} />
+                            </Flex> */}
+                            <Button 
+                                onClick={handleMint}
+                                backgroundColor="#D6517D"
+                                borderRadius="5px"
+                                boxShadow="0px 2px 2px 1px #0F0F0F"
+                                color="white"
+                                cursor="pointer"
+                                fontFamily="inherit"
+                                padding="15px"
+                                marginTop="10px"
+                            >
+                                Free Mint
+                            </Button>
+                        </div>
+                    ): (
+                        <Text>Conect metamask to mint</Text>
+                    )}
+                </Box>
+            </Flex>
+        </ChakraProvider>
     )
 }
 
