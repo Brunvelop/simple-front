@@ -7,7 +7,7 @@ import { ethers } from "ethers";
 
 const nftAddress = '0xF814a0B1Af54A97c28c8CF559E24b10Fc82801eD';
 
-const MainMint = ({ accounts, setAccounts}) => {
+const MainMint = ({ accounts }) => {
     const [mintAmount, setMintAmount] = useState(1);
     const isConnected = Boolean(accounts[0]);
 
