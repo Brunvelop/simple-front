@@ -54,7 +54,7 @@ const MainMint = ({ accounts }) => {
                             A Free-mint collection of 8 bit music and characters (CC0 free to use)
                         </Text>
                         <Box align="center" marginTop="20px" marginBottom="20px">
-                            <Image src={gif} alt='NFT Collection samples' />
+                            <Image src={gif}  alt='PixChars Collection samples' />
                         </Box>
                     </div>
                     { isConnected ? (

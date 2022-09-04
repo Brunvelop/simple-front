@@ -18,7 +18,7 @@ const NavBar = ({ accounts, setAccounts }) => {
     return (
         <ChakraProvider>
             <Flex justify="space-between" align="center" padding="30px">
-                <Flex justify="space-around" width="40%" padding="0 75px">
+                <Flex justify="start" width="40%">
                     <Link href="https://twitter.com">
                         <Image src={Twitter} boxSize="42px" margin="0 15px"/>
                     </Link>
