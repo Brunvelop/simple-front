@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ethers } from "ethers";
-import { Box, Button, Flex, Image, Text, ChakraProvider, Link} from '@chakra-ui/react';
+import { Box, Button, Flex, Image, Text, ChakraProvider, Link, Textarea} from '@chakra-ui/react';
 
 import nft from './NFT.json'
 import gif from "./assets/giphy.gif"
@@ -8,7 +8,6 @@ import gif from "./assets/giphy.gif"
 const nftAddress = '0xb50808e7E05F30c83949Eeb7a93cd2D08cFd2B09';
 
 const MainMint = ({ accounts }) => {
-    const [mintAmount, setMintAmount] = useState(1);
     const isConnected = Boolean(accounts[0]);
 
     async function handleMint(){
@@ -29,42 +28,34 @@ const MainMint = ({ accounts }) => {
         }
     }
 
-    const handleDecrement = () => {
-        if ( mintAmount <= 1) return;
-        setMintAmount(mintAmount - 1);
-    };
-
-    const handleIncrement = () => {
-        if ( mintAmount >= 3) return;
-        setMintAmount(mintAmount + 1);
-    };
-
     return (
         <ChakraProvider>
-            <Flex justify="center" align="center" height="100vh" paddingBottom="150px">
-                <Box width="520px">
+            <Flex justify="center" align="center" height="100vh" paddingBottom="15vh">
+                <div>
                     <div>
-                        <Text fontSize="48px" textShadow="0 5px #000000">PIXCHARS</Text>
+                        <Text fontSize="10vh" textShadow="0 5px #000000">TYPEART</Text>
                         <Text
-                            fontSize="30px"
-                            letterSpacing="-5.5%"
-                            fontFamily="VT323"
+                            fontSize="3.3vh"
+                            fontFamily="Mulish"
                             textShadow="0 2px 2px #000000"
                         >
-                            A Free mint collection of 8 bit music and characters (CC0)
+                            A collection of images generates by you with the help of stable difussion
                         </Text>
-                        <Box align="center" marginTop="20px" marginBottom="20px">
-                            <Image src={gif}  alt='PixChars Collection samples' />
-                        </Box>
                     </div>
                     { isConnected ? (
                         <div>
-                            {/* <Flex align="center" justify="center">
-                                <button onClick={handleDecrement}>-</button>
-                                <button onClick={handleIncrement}>+</button>
-                                <input type='number' value={mintAmount} />
-                            </Flex> */}
+                            <Box justify="left" marginTop='3vh' marginBottom='3vh'>
+                                <Text fontSize="1.8vh"fontFamily="Mulish" align="left" paddingLeft="2vw">1. Type the prompt </Text>
+                                <Text fontSize="1.8vh"fontFamily="Mulish" align="left" paddingLeft="2vw">2. Mint </Text>
+                                <Text fontSize="1.8vh"fontFamily="Mulish" align="left" paddingLeft="2vw">3. The AI will generate your image as NFT </Text>
+                            </Box>
+                                
                             
+                            <Textarea 
+                                placeholder='Enter a prompt and mint your nft!'
+                                marginTop='1vh'
+                                marginBottom='1vh'
+                            />
                             <Button 
                                 onClick={handleMint}
                                 backgroundColor="#D6517D" //66263b
@@ -73,11 +64,11 @@ const MainMint = ({ accounts }) => {
                                 color="white"
                                 cursor="pointer"
                                 fontFamily="inherit"
-                                padding="15px"
-                                marginTop="10px"
+                                padding="1vw"
+                                marginTop="1.5vh"
                                 //textDecoration='line-through'
                             >
-                                Free Mint
+                                Mint Prompt
                             </Button>
                             <Box marginTop="15px">
                                 <Link 
@@ -91,9 +82,18 @@ const MainMint = ({ accounts }) => {
                         </div>
                                                    
                     ): (
-                        <Text>Conect metamask to mint</Text>
+                        <div>
+                            <Box 
+                                align="center" 
+                                marginTop="2vh" 
+                                marginBottom="2vh"
+                            >
+                                <Image src={gif}  alt='PixChars Collection samples' width="50vh"/>
+                            </Box>
+                            <Text fontSize="1.7vh">Conect metamask to mint</Text>
+                        </div>
                     )}
-                </Box>
+                </div>
             </Flex>
         </ChakraProvider>
     )
