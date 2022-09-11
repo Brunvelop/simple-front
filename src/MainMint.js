@@ -44,7 +44,7 @@ const MainMint = ({ accounts }) => {
                             fontFamily="Mulish"
                             textShadow="0 2px 2px #000000"
                         >
-                            A collection of images generates by you with the help of stable difussion
+                            A collection of images generates by you with the help of <Link href={'https://stability.ai/blog/stable-diffusion-public-release'} isExternal>stable difussion</Link>
                         </Text>
                     </div>
                     { isConnected ? (
