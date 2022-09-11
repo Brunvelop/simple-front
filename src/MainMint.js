@@ -6,6 +6,11 @@ import nft from './NFT.json'
 import gif from "./assets/giphy.gif"
 
 const nftAddress = '0xb50808e7E05F30c83949Eeb7a93cd2D08cFd2B09';
+const example_promts = [
+    'cute octopus, ultra realistic, concept art, intricate details, highly detailed, photorealistic, octane render, 8 k ',
+    'portrait of a cute white anthropomorphic cat, concept art',
+    'beautiful centered portrait 3d render of the illuminati baphomet'
+]
 
 const MainMint = ({ accounts }) => {
     const isConnected = Boolean(accounts[0]);
@@ -52,7 +57,7 @@ const MainMint = ({ accounts }) => {
                                 
                             
                             <Textarea 
-                                placeholder='Enter a prompt and mint your nft!'
+                                placeholder={example_promts[Math.floor(Math.random()*example_promts.length)]}
                                 marginTop='1vh'
                                 marginBottom='1vh'
                             />
