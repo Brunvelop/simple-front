@@ -1,14 +1,12 @@
-import { useState } from "react";
 import { ethers } from "ethers";
 import { Box, Button, Flex, Image, Text, ChakraProvider, Link} from '@chakra-ui/react';
 
 import nft from './NFT.json'
-import gif from "./assets/giphy.gif"
+import gif from "./assets/collection-samples.gif"
 
 const nftAddress = '0xb50808e7E05F30c83949Eeb7a93cd2D08cFd2B09';
 
 const MainMint = ({ accounts }) => {
-    const [mintAmount, setMintAmount] = useState(1);
     const isConnected = Boolean(accounts[0]);
 
     async function handleMint(){
@@ -28,16 +26,6 @@ const MainMint = ({ accounts }) => {
             }
         }
     }
-
-    const handleDecrement = () => {
-        if ( mintAmount <= 1) return;
-        setMintAmount(mintAmount - 1);
-    };
-
-    const handleIncrement = () => {
-        if ( mintAmount >= 3) return;
-        setMintAmount(mintAmount + 1);
-    };
 
     return (
         <ChakraProvider>
@@ -59,11 +47,6 @@ const MainMint = ({ accounts }) => {
                     </div>
                     { isConnected ? (
                         <div>
-                            {/* <Flex align="center" justify="center">
-                                <button onClick={handleDecrement}>-</button>
-                                <button onClick={handleIncrement}>+</button>
-                                <input type='number' value={mintAmount} />
-                            </Flex> */}
                             
                             <Button 
                                 onClick={handleMint}

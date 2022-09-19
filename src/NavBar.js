@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Flex, Image, Link, Spacer, ChakraProvider} from '@chakra-ui/react';
+import { Box, Button, Flex, Image, Link, ChakraProvider} from '@chakra-ui/react';
 import Twitter from "./assets/social-media-icons/twitter_32x32.png"
 import Opensea from "./assets/social-media-icons/opensea_32x32.png"
 import Youtube from "./assets/social-media-icons/youtube_32x32.png"
