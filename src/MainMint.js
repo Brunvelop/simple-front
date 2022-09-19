@@ -28,57 +28,60 @@ const MainMint = ({ accounts }) => {
     }
 
     return (
-        <ChakraProvider>
-            <Flex justify="center" align="center" height="100vh" paddingBottom="150px">
-                <Box width="520px">
+        
+        <Flex justify="center" align="center" height="100vh" paddingBottom="150px">
+            <Box width="520px">
+                <div>
+                    <Text 
+                        fontFamily="f1" fontSize="48px" textAlign="center" 
+                        color="white" textShadow="0 5px #000000"
+                    >
+                        PIXCHARS
+                    </Text>
+                    <Text
+                        textAlign="center" fontSize="30px" letterSpacing="-5.5%"
+                        fontFamily="f2" color="white" textShadow="0 2px 2px #000000"
+                    >
+                        A Free mint collection of 8 bit music and characters (CC0)
+                    </Text>
+                    <Box align="center" marginTop="20px" marginBottom="20px">
+                        <Image src={gif}  alt='PixChars Collection samples' />
+                    </Box>
+                </div>
+                { isConnected ? (
                     <div>
-                        <Text fontSize="48px" textShadow="0 5px #000000">PIXCHARS</Text>
-                        <Text
-                            fontSize="30px"
-                            letterSpacing="-5.5%"
-                            fontFamily="VT323"
-                            textShadow="0 2px 2px #000000"
+                        
+                        <Button 
+                            onClick={handleMint}
+                            backgroundColor="#D6517D" //66263b
+                            borderRadius="5px"
+                            boxShadow="0px 2px 2px 1px #0F0F0F"
+                            color="white"
+                            cursor="pointer"
+                            fontFamily="inherit"
+                            padding="15px"
+                            marginTop="10px"
+                            //textDecoration='line-through'
                         >
-                            A Free mint collection of 8 bit music and characters (CC0)
-                        </Text>
-                        <Box align="center" marginTop="20px" marginBottom="20px">
-                            <Image src={gif}  alt='PixChars Collection samples' />
+                            Free Mint
+                        </Button>
+                        <Box marginTop="15px">
+                            <Link 
+                                href={'https://etherscan.io/address/'+nftAddress+'#code'} isExternal
+                                fontSize="12px"
+                            >
+                                contract
+                            </Link>
+                            {/* <Text fontSize="12px">Sold out!</Text> */}
                         </Box>
                     </div>
-                    { isConnected ? (
-                        <div>
-                            
-                            <Button 
-                                onClick={handleMint}
-                                backgroundColor="#D6517D" //66263b
-                                borderRadius="5px"
-                                boxShadow="0px 2px 2px 1px #0F0F0F"
-                                color="white"
-                                cursor="pointer"
-                                fontFamily="inherit"
-                                padding="15px"
-                                marginTop="10px"
-                                //textDecoration='line-through'
-                            >
-                                Free Mint
-                            </Button>
-                            <Box marginTop="15px">
-                                <Link 
-                                    href={'https://etherscan.io/address/'+nftAddress+'#code'} isExternal
-                                    fontSize="12px"
-                                >
-                                    contract
-                                </Link>
-                                {/* <Text fontSize="12px">Sold out!</Text> */}
-                            </Box>
-                        </div>
-                                                   
-                    ): (
-                        <Text>Conect metamask to mint</Text>
-                    )}
-                </Box>
-            </Flex>
-        </ChakraProvider>
+                                                
+                ): (
+                    <Text>Conect metamask to mint</Text>
+                )}
+            </Box>
+        </Flex>
+        
     )
 }
 

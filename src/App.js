@@ -1,19 +1,27 @@
 import { useState } from 'react';
+import { ChakraProvider, Box, Image } from '@chakra-ui/react';
+
 import './App.css';
 import MainMint from './MainMint';
 import NavBar from './NavBar'
+import theme from './theme'
+import bg from './assets/background/bg.gif'
 
 function App() {
   const [accounts, setAccounts] = useState([]);
 
   return (
-    <div className='overlay'>
-      <div className="App">
+    <ChakraProvider theme={theme}>
+      <Box
+        backgroundImage={bg} 
+        backgroundRepeat="no-repeat" 
+        backgroundSize="cover"
+        opacity= "0.85"
+      >
         <NavBar accounts={accounts} setAccounts={setAccounts} />
-        <MainMint accounts={accounts} />
-      </div>
-      <div className='moving-background'></div>
-    </div>
+        <MainMint accounts={accounts}/>
+      </Box>
+    </ChakraProvider>
   );
 }
 
