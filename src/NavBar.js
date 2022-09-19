@@ -20,10 +20,10 @@ const NavBar = ({ accounts, setAccounts }) => {
         <ChakraProvider>
             <Flex justify="space-between" align="center" padding="30px">
                 <Flex justify="start" width="40%">
-                    <Link href="https://twitter.com">
+                    <Link href="https://twitter.com/pixverses">
                         <Image src={Twitter} boxSize="42px" margin="0 15px"/>
                     </Link>
-                    <Link href="https://twitter.com">
+                    <Link href="https://opensea.io/Pixverses?tab=created">
                         <Image src={Opensea} boxSize="42px" margin="0 15px"/>
                     </Link>
                     <Link href="https://www.youtube.com/c/Pixverses" target="_blank">
