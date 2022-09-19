@@ -71,18 +71,19 @@ const MainMint = ({ accounts }) => {
                                 fontFamily="inherit"
                                 padding="1vw"
                                 marginTop="1.5vh"
-                                //textDecoration='line-through'
+                                textDecoration='line-through'
+                                disabled
                             >
                                 Mint Prompt
                             </Button>
                             <Box marginTop="15px">
-                                <Link 
+                                {/* <Link 
                                     href={'https://etherscan.io/address/'+nftAddress+'#code'} isExternal
                                     fontSize="12px"
                                 >
                                     contract
-                                </Link>
-                                {/* <Text fontSize="12px">Sold out!</Text> */}
+                                </Link> */}
+                                {<Text fontSize="12px">Mint not open yet</Text>}
                             </Box>
                         </div>
                                                    
