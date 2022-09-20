@@ -33,13 +33,13 @@ const MainMint = ({ accounts }) => {
             <Box width="520px">
                 <div>
                     <Text 
-                        fontFamily="f1" fontSize="48px" textAlign="center" 
+                        fontFamily="f1" fontSize={[32,48]}textAlign="center" 
                         color="white" textShadow="0 5px #000000"
                     >
                         PIXCHARS
                     </Text>
                     <Text
-                        textAlign="center" fontSize="30px" letterSpacing="-5.5%"
+                        textAlign="center" fontSize={[22,30]} letterSpacing="-5.5%"
                         fontFamily="f2" color="white" textShadow="0 2px 2px #000000"
                     >
                         A Free mint collection of 8 bit music and characters (CC0)
@@ -72,13 +72,13 @@ const MainMint = ({ accounts }) => {
                             >
                                 contract
                             </Link> */}
-                            <Text color="white" fontFamily="f1" fontSize="12px">Sold out!</Text>
+                            <Text color="white" fontFamily="f1" fontSize={[10,14]}>Sold out!</Text>
                         </Box>
                     </Box>
                                                 
                 ): (
                     <Text 
-                        textAlign="center" color="white" fontFamily="f1" fontSize="12px"
+                        textAlign="center" color="white" fontFamily="f1" fontSize={[10,16]}
                         
                     >
                         Conect metamask to mint

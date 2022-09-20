@@ -19,30 +19,30 @@ const NavBar = ({ accounts, setAccounts }) => {
 
     return (
         
-        <Flex justify="space-between" align="center" padding="30px">
+        <Flex justify="space-between" align="center" padding={[5,30]} marginBottom={[8,10]}>
             <Flex justify="start" width="40%">
                 <Link href="https://twitter.com/pixverses">
-                    <Image src={Twitter} boxSize="42px" margin="0 15px"/>
+                    <Image src={Twitter} boxSize={[8,42]} margin="0 15px"/>
                 </Link>
                 <Link href="https://opensea.io/collection/pix-chars">
-                    <Image src={Opensea} boxSize="42px" margin="0 15px"/>
+                    <Image src={Opensea} boxSize={[8,42]} margin="0 15px"/>
                 </Link>
                 <Link href="https://www.youtube.com/c/Pixverses" target="_blank">
-                    <Image src={Youtube} height="42px" margin="0 15px"/>
+                    <Image src={Youtube} boxSize={[8,42]} margin="0 15px"/>
                 </Link>
             </Flex>
             {isConnected ? (
-                <Box margin="0 15px">Connected</Box>
+                <Box fontFamily="f1" color="white" margin="0 15px">Connected</Box>
             ) : (
                 <Button
+                    size={['sm','md']}
                     fontFamily="f1"
                     backgroundColor="#D6517D"
+                    fontSize={[10,18]}
                     borderRadius="5px"
                     boxShadow="0px 2px 2px 1px #0F0F0F"
                     color="white"
                     cursor="pointer"
-                    padding="15px"
-                    margin="0 15px"
                     onClick={connectAccount}
                 >
                     Connect
