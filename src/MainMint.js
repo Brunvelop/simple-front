@@ -1,5 +1,5 @@
 import { ethers } from "ethers";
-import { Box, Button, Flex, Image, Text, ChakraProvider, Link} from '@chakra-ui/react';
+import { Box, Button, Flex, Image, Text, Link} from '@chakra-ui/react';
 
 import nft from './NFT.json'
 import gif from "./assets/collection-samples.gif"
@@ -49,35 +49,40 @@ const MainMint = ({ accounts }) => {
                     </Box>
                 </div>
                 { isConnected ? (
-                    <div>
-                        
-                        <Button 
+                    <Box align="center">
+                        <Button
+                            disabled="true"
+                            textAlign="center"
                             onClick={handleMint}
-                            backgroundColor="#D6517D" //66263b
+                            backgroundColor="#D6517D"
                             borderRadius="5px"
                             boxShadow="0px 2px 2px 1px #0F0F0F"
                             color="white"
                             cursor="pointer"
-                            fontFamily="inherit"
+                            fontFamily="f1"
                             padding="15px"
                             marginTop="10px"
-                            //textDecoration='line-through'
                         >
                             Free Mint
                         </Button>
                         <Box marginTop="15px">
-                            <Link 
+                            {/* <Link 
                                 href={'https://etherscan.io/address/'+nftAddress+'#code'} isExternal
                                 fontSize="12px"
                             >
                                 contract
-                            </Link>
-                            {/* <Text fontSize="12px">Sold out!</Text> */}
+                            </Link> */}
+                            <Text color="white" fontFamily="f1" fontSize="12px">Sold out!</Text>
                         </Box>
-                    </div>
+                    </Box>
                                                 
                 ): (
-                    <Text>Conect metamask to mint</Text>
+                    <Text 
+                        textAlign="center" color="white" fontFamily="f1" fontSize="12px"
+                        
+                    >
+                        Conect metamask to mint
+                    </Text>
                 )}
             </Box>
         </Flex>

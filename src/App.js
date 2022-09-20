@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChakraProvider, Box, Image } from '@chakra-ui/react';
+import { ChakraProvider, Box } from '@chakra-ui/react';
 
 import './App.css';
 import MainMint from './MainMint';
