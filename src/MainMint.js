@@ -72,7 +72,7 @@ const MainMint = ({ accounts }) => {
                             >
                                 contract
                             </Link> */}
-                            <Text color="white" fontFamily="f1" fontSize={[10,14]}>Sold out!</Text>
+                            <Link href="https://opensea.io/collection/pix-chars" color="white" fontFamily="f1" fontSize={[10,14]}>Sold out!</Link>
                         </Box>
                     </Box>
                                                 

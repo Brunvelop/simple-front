@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Flex, Image, Link, ChakraProvider} from '@chakra-ui/react';
+import { Box, Button, Flex, Image, Link} from '@chakra-ui/react';
 
 import Twitter from "./assets/social-media-icons/twitter_32x32.png"
 import Opensea from "./assets/social-media-icons/opensea_32x32.png"
@@ -38,7 +38,7 @@ const NavBar = ({ accounts, setAccounts }) => {
                     size={['sm','md']}
                     fontFamily="f1"
                     backgroundColor="#D6517D"
-                    fontSize={[10,18]}
+                    fontSize={[10,15]}
                     borderRadius="5px"
                     boxShadow="0px 2px 2px 1px #0F0F0F"
                     color="white"
